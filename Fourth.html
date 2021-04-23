@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>JourneydatePage</title>
+</head>
+
+<body>
+    <form align="center" onsubmit="dateAndTime()">
+        <h1>Journey Date and Time</h1>
+        <br><br> <b>Additional charges may be applied for PEAK TIME journey bookings</b>
+        <br><br>
+        <label>Journey Date</label>
+        <input type="date" name="journey date" id="journeydate" required/>
+        <br><br>
+        <label>PickUp Time</label>
+        <input type="time" name="pickuptime" id="pickuptime" required/>
+        <br><br>
+        <button type="submit">Submit</button>
+        <!--  <br> Successfully Booked! -->
+        <br><br>
+
+    </form>
+    <script>
+        function dateAndTime() {
+            event.preventDefault();
+            let journeyDate = document.querySelector("#journeydate").value;
+            let journeyTime = document.querySelector("#pickuptime").value;
+
+            let userDate = parseInt(journeyDate.slice(8, 10));
+            let userMonth = parseInt(journeyDate.slice(5, 7));
+            let userYear = parseInt(journeyDate.slice(0, 4));
+
+
+            let todayDate = new Date();
+            let todayTime = new Time();
+
+            let currentDate = parseInt(todayDate.getDate());
+            let currentMonth = parseInt(todayDate.getMonth()) + 1;
+            let currentYear = parseInt(todayDate.getYear());
+
+
+
+            // let currentTime = todayTime.getHours() + ":" + todayTime.getMinutes();
+
+
+            if ((userDate >= currentDate) && (userMonth == currentMonth) && (userYear == currentYear) {
+                    alert("SUCCESS");
+                } else {
+                    alert("sorry");
+                }
+    </script>
+</body>
+
+</html>
